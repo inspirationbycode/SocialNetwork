@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Logic.Friends" table="Friends">
+        <id column="Id" name="id" type="java.lang.Long" >
+        <generator class = "increment"/>
+        </id>
+        <property column="Id_user" name="id_user" type="java.lang.Integer" />
+        <property column="Id_friend" name="Id_friend" type="java.lang.Integer" />
+       
+        <set name="Friends" lazy="false">
+        <key column="id"/>
+        <one-to-many class="Logic.Friends"/>
+        </set>
+    </class>
+</hibernate-mapping>

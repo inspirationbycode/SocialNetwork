@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Logic.Post" table="Post">
+        <id column="Id" name="id" type="java.lang.Long" >
+        <generator class = "increment"/>
+        </id>
+        <property column="Id_user" name="id_user" type="java.lang.Integer" />
+        <property column="Id_photo" name="id_photo" type="java.lang.Long" />
+        <property column="Description" name="description" type="java.lang.Char" />
+ 		<property column="Date" name="date" type="java.time.LocalDate" />
+       
+        <set name="Post" lazy="false">
+        <key column="id"/>
+        <one-to-many class="Logic.Post"/>
+        </set>
+    </class>
+</hibernate-mapping>

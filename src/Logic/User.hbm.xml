@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Logic.User" table="User">
+        <id column="Id" name="id" type="java.lang.Integer" >
+        <generator class = "increment"/>
+        </id>
+        <property column="First_name" name="first_name" type="java.lang.Char" />
+        <property column="Last_name" name="last_name" type="java.lang.Char" />
+        <property column="Phone_number" name="phone_number" type="java.lang.Char" />
+ 		<property column="Id_photo" name="id_photo" type="java.lang.Long" />
+ 		<property column="Email" name="email" type="java.lang.Char" />
+        <property column="Password" name="password" type="java.lang.Char" />
+        <property column="Password_salt" name="password_salt" type="java.lang.Char" />
+        <property column="Is_activated" name="is_activated" type="java.lang.Integer" />
+        
+        <set name="User" lazy="false">
+        <key column="id"/>
+        <one-to-many class="Logic.User"/>
+        </set>
+    </class>
+</hibernate-mapping>
